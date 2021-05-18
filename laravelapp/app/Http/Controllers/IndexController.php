@@ -10,10 +10,10 @@ class IndexController extends Controller
 {
     public function index(Request $request){
 
-        $consumerKey = "3A5ErZ8Uu9mShqZl2dReBvPHb";
-        $consumerSecret = "WWUESNA0uqtQEy6idsjTGXb3hYCypwoHtXDflQgy21cOJOHNYp";
-        $accessToken = "1012746566-yAUJ0BaY10MkXSMclLSlYBYxFx3YI8TgXLOt7IV";
-        $accessTokenSecret = "eIO1KCfMVmfTrfDn92oMishNpBGEui319fI2Va0gNZkf6";
+        $consumerKey = "XXXXXXXXXXX";
+        $consumerSecret = "XXXXXXXX";
+        $accessToken = "XXXXXXX-XXXXXXXXXXX";
+        $accessTokenSecret = "XXXXXXXXXXXX";
  
         $twitter = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
