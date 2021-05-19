@@ -10,11 +10,11 @@ class IndexController extends Controller
 {
     public function index(Request $request){
 
-        $consumerKey = "XXXXXXXXXXX";
-        $consumerSecret = "XXXXXXXX";
-        $accessToken = "XXXXXXX-XXXXXXXXXXX";
-        $accessTokenSecret = "XXXXXXXXXXXX";
- 
+        $consumerKey = config('app.consumer_key');
+        $consumerSecret = config('app.consumer_secret');
+        $accessToken = config('app.access_token');
+        $accessTokenSecret = config('app.access_token_secret');
+
         $twitter = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
         // ツイート検索パラメータの設定、「q」は検索文字列

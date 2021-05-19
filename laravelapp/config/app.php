@@ -26,7 +26,12 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'NOT_FOUND'),
+
+    'consumer_key' => env('CONSUMER_KEY', 'NOT_FOUND'),
+    'consumer_secret' => env('CONSUMER_SECRET', 'NOT_FOUND'),
+    'access_token' => env('ACCESS_TOKEN', 'NOT_FOUND'),
+    'access_token_secret' => env('ACCESS_TOKEN_SECRET', 'NOT_FOUND'),
 
     /*
     |--------------------------------------------------------------------------
