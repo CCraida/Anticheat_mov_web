@@ -13,7 +13,6 @@
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     @endforeach
     </div>
-
 <!--
     <blockquote class="twitter-tweet" width="100" data-tweet-limit="5">
         <a href="https://thttps://twitter.com/8eCk7SAWmTVWC0X/status/1392398117094363136"></a>
