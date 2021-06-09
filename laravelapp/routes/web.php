@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PlayMovieController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +21,5 @@ Route::get('/', function () {
 
 //Route::get('index','IndexController@index');
 Route::get('index',  [IndexController::class, 'index']);
+Route::get('play_movie',  [PlayMovieController::class, 'index']);
+;
