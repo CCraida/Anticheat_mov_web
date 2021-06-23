@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use app\Http\Common\TwiClass;
 use Illuminate\Http\Request;
 require "/Users/yoshimoritakumi/Desktop/Git_repository/anti_cheat_mov/laravelapp/vendor/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
@@ -9,24 +9,6 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 class IndexController extends Controller
 {
     public function index(Request $request){
-
-        $consumerKey = config('app.consumer_key');
-        $consumerSecret = config('app.consumer_secret');
-        $accessToken = config('app.access_token');
-        $accessTokenSecret = config('app.access_token_secret');
-
-        $twitter = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
-
-        // ツイート検索パラメータの設定、「q」は検索文字列
-        $twi_params = array(
-            'q' => "#チーター #Apex",'count' => 5,'filter'=>'videos'
-        );
-
-        // ツイート検索実行
-//        $tweets_obj = $connection->get('search/tweets', $params);
-          $twi_info = $twitter->get("search/tweets", $twi_params);
-
-//        $statuses = $twitter->get($url, $params);
 
 /*
         foreach($twi_info->statuses as $tweet){
@@ -42,7 +24,8 @@ class IndexController extends Controller
             echo '</p>';
         }
         //print_r($statuses);
-*/
+*/  
+        $twi_info = TwiClass::make_timeline();
         $param =['twi_info'=> $twi_info];
 
         return view('index.index',$param);
