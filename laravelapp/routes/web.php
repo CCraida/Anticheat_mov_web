@@ -21,5 +21,9 @@ Route::get('/', function () {
 
 //Route::get('index','IndexController@index');
 Route::get('index',  [IndexController::class, 'index']);
-Route::get('play_movie',  [PlayMovieController::class, 'index']);
+//Route::get('play_movie',  [PlayMovieController::class, 'index']);
+
+//movie_idは数字以外禁止にwhereでする。
+Route::get('play_movie/{movie_id}',  [PlayMovieController::class, 'index'])->where('member_id', '[0-9]+');
+
 ;

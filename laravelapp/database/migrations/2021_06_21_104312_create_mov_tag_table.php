@@ -15,7 +15,7 @@ class CreateMovTagTable extends Migration
     {
         Schema::create('mov_tag', function (Blueprint $table) {
             $table->integer('mov_id')->unsigned();
-            $table->foreign('mov_id')->references('id')->on('mov')->onDelete('no action');
+            $table->foreign('mov_id')->references('id')->on('movies')->onDelete('no action');
             $table->string('tag1');
             $table->string('tag2');
             $table->string('tag3');

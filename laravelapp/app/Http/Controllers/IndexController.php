@@ -5,10 +5,29 @@ use app\Http\Common\TwiClass;
 use Illuminate\Http\Request;
 require "/Users/yoshimoritakumi/Desktop/Git_repository/anti_cheat_mov/laravelapp/vendor/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
+use App\Models\movie;
+use Illuminate\Support\Facades\Log;
 
 class IndexController extends Controller
 {
     public function index(Request $request){
+        
+        //リクエスト内から検索ワードを取り出す。
+        $key_word = $request->input('mov_search','default');
+
+        //検索検索ワードであいまい検索
+        //$mov_info = movie::where('mov_name','like','%'.$key_word.'%')->get();
+
+        //ランダムに9件取得
+        $mov_info = movie::inRandomOrder()->take(9)->get();
+        //Log::debug('ログメッセージ');
+/* Delete
+        foreach ($mov_info as $flight) {
+            echo $flight->mov_name;
+            echo "test";
+        }
+        echo $key_word;
+*/
 
 /*
         foreach($twi_info->statuses as $tweet){
@@ -28,6 +47,6 @@ class IndexController extends Controller
         $twi_info = TwiClass::make_timeline();
         $param =['twi_info'=> $twi_info];
 
-        return view('index.index',$param);
+        return view('index.index',compact('mov_info','twi_info'));
     }
 }

@@ -13,9 +13,8 @@
             <div class="w-100"></div>
             <h2>動画の説明文です。</h2>
         </div>
-       
         <video controls playsinline autoplay muted width="700px" height="500px">
-        <source src="{{ asset('movie.mp4') }}#t=0.001" type="video/mp4">
+        <source src="{{ asset('/切り取り/'.$mov_info['mov_name']) }}" type="video/mp4">
         </video>
       
         <!-- ツイートボタン -->

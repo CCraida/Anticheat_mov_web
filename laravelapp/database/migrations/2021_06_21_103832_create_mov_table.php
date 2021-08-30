@@ -13,16 +13,16 @@ class CreateMovTable extends Migration
      */
     public function up()
     {
-        Schema::create('mov', function (Blueprint $table) {
+        Schema::create('movies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('mov_name');
             $table->string('mov_file_dir');
+            $table->string('thumb_dir');
             $table->date('upload_by');
             $table->integer('number_view');
             $table->integer('bookmarks');
             $table->integer('updated_by')->unsigned();
             $table->foreign('updated_by')->references('id')->on('user')->onDelete('no action');
-
             $table->timestamps();
         });
     }

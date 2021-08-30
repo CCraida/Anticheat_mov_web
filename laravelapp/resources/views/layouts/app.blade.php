@@ -11,7 +11,7 @@
     <div class="container"></div>
         <div class="row">
 
-        <div class="col-lg-auto d-none d-lg-block bg-dark">
+        <div class="col-lg-auto d-lg-block bg-dark">
                 @include('common.sidevar')
 <!--
                 <div class="border-left" style="padding:10px;">
