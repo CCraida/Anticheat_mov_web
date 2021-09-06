@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PlayMovieController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +27,10 @@ Route::get('index',  [IndexController::class, 'index']);
 //movie_idは数字以外禁止にwhereでする。
 Route::get('play_movie/{movie_id}',  [PlayMovieController::class, 'index'])->where('member_id', '[0-9]+');
 
-;
+//ファイルアップロードページ(ログイン済みの場合のみ遷移)
+Route::get('uplode',  [UploadController::class, 'index'])->middleware('auth');
 
+//認証関係
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
