@@ -27,3 +27,7 @@ Route::get('index',  [IndexController::class, 'index']);
 Route::get('play_movie/{movie_id}',  [PlayMovieController::class, 'index'])->where('member_id', '[0-9]+');
 
 ;
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
