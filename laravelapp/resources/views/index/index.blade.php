@@ -21,7 +21,7 @@
         @endif
         <div>
             <form method="post">
-                <!--type="submit"のinputタグとボタンの画像となるimg タグを用意-->tt
+                <!--type="submit"のinputタグとボタンの画像となるimg タグを用意-->
                <a href="/play_movie/{{ $mov_record->id }}"><img src="{{$mov_record->thumb_dir}}" alt="サムネイル" class="img-fluid" width="300" height= "300"  >
                 </a>
                 <p class="text-center">ここにタイトルです</p>

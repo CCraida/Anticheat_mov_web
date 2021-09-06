@@ -17,7 +17,6 @@ class PlayMovieController extends Controller
 
         //$movie_idでDBから動画名を取得
         $mov_info = movie::select('mov_name')->where('id','=',$movie_id)->first();
-        echo $mov_info['mov_name'];
 
         $twi_info = TwiClass::make_timeline();
         $param =['twi_info'=> $twi_info,'mov_info'=>$mov_info];
