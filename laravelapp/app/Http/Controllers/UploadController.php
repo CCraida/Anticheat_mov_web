@@ -23,6 +23,6 @@ class UploadController extends Controller
         $twi_info = TwiClass::make_timeline();
         $param =['twi_info'=> $twi_info];
 
-        return view('index.index',compact('mov_info','twi_info'));
+        return view('upload.upload_movie');
     }
 }
