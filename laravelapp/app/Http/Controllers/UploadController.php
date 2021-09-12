@@ -12,6 +12,11 @@ use App\Models\movie;
 use Illuminate\Support\Facades\Log;
 class UploadController extends Controller
 {
+    /**
+    * 動画投稿ページ表示
+    *
+    * 
+    */
     public function index(Request $request){
         
         //リクエスト内から検索ワードを取り出す。
@@ -22,6 +27,29 @@ class UploadController extends Controller
     
         $twi_info = TwiClass::make_timeline();
         $param =['twi_info'=> $twi_info];
+
+        return view('upload.upload_movie');
+    }
+
+    /**
+    * アップロードボタン押下時、ファイル保存処理
+    *
+    * 
+    */
+    public function upload(Request $request){
+        
+        //リクエストから動画ファイル、サムネ画像ファイルを取り出す。
+        //$mov_file = $request->file('movie');
+        //$thumb_file = $request->file('thumb');
+
+        //動画名を取り出す。
+        $mov_name = $request['name'];
+
+        //ファイルを保存!
+        $mov_dir = "/public/movies";
+        $thumb_dir = "/public/thumb";
+        $request->file('movie')->storeAs($mov_dir,$mov_name . '.mp4');
+        $request->file('thumb')->store($thumb_dir);
 
         return view('upload.upload_movie');
     }
