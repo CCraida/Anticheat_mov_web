@@ -10,6 +10,8 @@ require "/Users/yoshimoritakumi/Desktop/Git_repository/anti_cheat_mov/laravelapp
 use Abraham\TwitterOAuth\TwitterOAuth;
 use App\Models\movie;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+
 class UploadController extends Controller
 {
     /**
@@ -38,18 +40,24 @@ class UploadController extends Controller
     */
     public function upload(Request $request){
         
-        //リクエストから動画ファイル、サムネ画像ファイルを取り出す。
-        //$mov_file = $request->file('movie');
-        //$thumb_file = $request->file('thumb');
-
         //動画名を取り出す。
         $mov_name = $request['name'];
 
         //ファイルを保存!
         $mov_dir = "/public/movies";
         $thumb_dir = "/public/thumb";
-        $request->file('movie')->storeAs($mov_dir,$mov_name . '.mp4');
-        $request->file('thumb')->store($thumb_dir);
+        $path1 = $request->file('movie')->storeAs($mov_dir,$mov_name . '.mp4');
+        $path2 = $request->file('thumb')->store($thumb_dir);    
+
+        //カラムに値をセット
+        $mov_db = new movie;
+        $mov_db->mov_name = $mov_name . '.mp4';
+        $mov_db->mov_file_dir = $mov_dir;
+        $mov_db->thumb_dir = $thumb_dir;
+        $mov_db->updated_by = Auth::id();
+        
+        //ファイル情報をDB保存
+        $mov_db->save();
 
         return view('upload.upload_movie');
     }
