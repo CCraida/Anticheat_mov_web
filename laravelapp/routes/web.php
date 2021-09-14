@@ -28,7 +28,8 @@ Route::get('index',  [IndexController::class, 'index']);
 Route::get('play_movie/{movie_id}',  [PlayMovieController::class, 'index'])->where('member_id', '[0-9]+');
 
 //ファイルアップロードページ(ログイン済みの場合のみ遷移)
-Route::get('uplode',  [UploadController::class, 'index'])->middleware('auth');
+Route::get('upload',  [UploadController::class, 'index'])->middleware('auth');
+Route::post('upload',[UploadController::class, 'upload']);
 
 //認証関係
 Auth::routes();

@@ -23,7 +23,7 @@
                             メニュー
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <a class="dropdown-item" href="#!">動画アップロード</a>
+                            <a class="dropdown-item" href="/upload">動画アップロード</a>
                             <a class="dropdown-item" href="#!">マイリスト</a>
                         
                             <a class="dropdown-item" href={{ route('logout') }} 
