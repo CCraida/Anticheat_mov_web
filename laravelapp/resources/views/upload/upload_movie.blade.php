@@ -4,6 +4,7 @@
 
 
 @section('content')
+
 <div class="container">
 <h1>動画のアップロード</h1>
 <form class="was-validated" method="POST" action="/upload" enctype="multipart/form-data">
@@ -19,13 +20,51 @@
     <hr>
     <div class="form-group">
         <label for="explain">動画説明文(任意)</label>
-        <textarea id="explain" class="form-control" maxlength="256" rows="4" required> </textarea>
+        <textarea id="explain" class="form-control" maxlength="256" rows="4"> </textarea>
             <div class="valid-feedback">
             </div>
             <div class="invalid-feedback">
             </div>
     </div>
     <hr>
+    <div class="form-group">
+        <label for="cheater_name">チート使用者ID or IGN(必須)</label>
+        <input type="text" id="cheater_name" class="form-control" name="cheater_name" required> 
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+            </div>
+    </div>
+    <hr>
+
+    <label>プラットフォーム</label>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="opt_pc" checked>
+        <lavel>PC</lavel>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="opt_ps4">
+        <lavel>CS</lavel>
+    </div>
+    <hr>
+
+    <label>日付(遭遇日)</label>
+    <div class="form-group">
+        <input type="date" id="" class="form-control" name="date" required> 
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+        <label for="twi_id">投稿者のTwitterID(必須)</label>
+        <input type="text" id="twi_id" class="form-control" name="twi_id" required> 
+            <div class="valid-feedback">
+            </div>
+            <div class="invalid-feedback">
+            </div>
+    </div>
+    <hr>
+
 
     <div class="form-group">
         <label>ファイル</label><br>
