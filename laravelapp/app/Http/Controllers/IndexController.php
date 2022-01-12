@@ -14,7 +14,6 @@ class IndexController extends Controller
         
         //リクエスト内から検索ワードを取り出す。
         $key_word = $request->input('mov_search','default');
-
         //検索検索ワードであいまい検索
         //$mov_info = movie::where('mov_name','like','%'.$key_word.'%')->get();
 

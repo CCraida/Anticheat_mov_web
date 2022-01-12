@@ -59,6 +59,35 @@ class UploadController extends Controller
         //ファイル情報をDB保存
         $mov_db->save();
 
-        return view('upload.upload_movie');
+        //リプライ内容を作成する。
+        $cheater_id = "ID:" . $request['cheater_name'];
+        $platform   = "Platform:" . $request['platform'];
+        $date       = "Date:" . $request['date'];
+        $twi_reply = $cheater_id . "\n" . $platform . "\n" . $date;
+
+        //リプライ内容確認ページを表示
+        return view('upload.comfirm_reply_txt',compact('twi_reply'));
     }
+    /**
+    * リプライ内容確認ページのリプライ実行ボタン押下
+    *
+    * 
+    */
+    public function upload_confirmed(Request $request){
+        //リプライテキストを取り出す。
+        $reply_text = $request['reply_txt'];
+    
+        //twitterオブジェクト生成
+        $twitter_obj = TwiClass::make_twi_obj();
+
+        //リプライ実行
+        TwiClass::reply_hideout($twitter_obj,$reply_text);
+
+
+
+        
+        //リプライ内容確認ページを表示
+        return redirect("/index");
+    }
+
 }
