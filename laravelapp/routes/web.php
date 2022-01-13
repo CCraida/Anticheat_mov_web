@@ -30,6 +30,8 @@ Route::get('play_movie/{movie_id}',  [PlayMovieController::class, 'index'])->whe
 //ファイルアップロードページ(ログイン済みの場合のみ遷移)
 Route::get('upload',  [UploadController::class, 'index'])->middleware('auth');
 Route::post('upload',[UploadController::class, 'upload']);
+Route::post('upload/confirmed',[UploadController::class, 'upload_confirmed']);
+
 
 //認証関係
 Auth::routes();

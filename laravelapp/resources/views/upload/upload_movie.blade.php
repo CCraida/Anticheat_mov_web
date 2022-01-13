@@ -39,11 +39,11 @@
 
     <label>プラットフォーム</label>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="opt_pc" checked>
+        <input class="form-check-input" type="radio" name="platform" id="exampleRadios1" value="PC" checked>
         <lavel>PC</lavel>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="opt_ps4">
+        <input class="form-check-input" type="radio" name="platform" id="exampleRadios1" value="CS">
         <lavel>CS</lavel>
     </div>
     <hr>
