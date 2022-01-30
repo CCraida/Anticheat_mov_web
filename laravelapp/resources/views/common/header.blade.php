@@ -1,7 +1,7 @@
-@section('header')>
+@section('header')
         <header>
-            <nav class="navbar navbar-expand-lg flex-row navbar-dark bg-dark mt-3">
-                <a class="navbar-brand mr-auto" href="#">AntiCheat</a>
+            <nav class="navbar navbar-expand-lg flex-row navbar-dark bg-dark mt-0">
+                <a class="navbar-brand mr-auto" href="/index">AntiCheat</a>
                 
                 <form class="form-inline my-2 my-lg-0" method="GET" action=" {{ url('/index')}}        ">
                     <div class="mr-4">

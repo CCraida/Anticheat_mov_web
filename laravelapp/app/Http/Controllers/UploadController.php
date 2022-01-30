@@ -42,6 +42,8 @@ class UploadController extends Controller
         
         //動画名を取り出す。
         $mov_name = $request['name'];
+        $explain = $request['explain'];
+
 
         //ファイルを保存!
         $mov_dir = "/public/movies";
@@ -52,6 +54,8 @@ class UploadController extends Controller
         //カラムに値をセット
         $mov_db = new movie;
         $mov_db->mov_name = $mov_name . '.mp4';
+        $mov_db->explain = $explain;
+
         $mov_db->mov_file_dir = $mov_dir;
         $mov_db->thumb_dir = $thumb_dir;
         $mov_db->updated_by = Auth::id();

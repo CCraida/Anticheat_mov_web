@@ -45,7 +45,7 @@ class TwiClass {
 
         // ツイート検索パラメータの設定、「q」は検索文字列
         $twi_params = array(
-            'q' => "#チーター #Apex",'count' => 5,'filter'=>'videos'
+            'q' => "#チーター #Apex",'count' =>3,'filter'=>'videos'
         );
 
         $twi_info = $twitter_obj->get("search/tweets", $twi_params);

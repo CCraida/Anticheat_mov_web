@@ -20,7 +20,7 @@
     <hr>
     <div class="form-group">
         <label for="explain">動画説明文(任意)</label>
-        <textarea id="explain" class="form-control" maxlength="256" rows="4"> </textarea>
+        <textarea id="explain" class="form-control" maxlength="256" rows="4" name="explain"> </textarea>
             <div class="valid-feedback">
             </div>
             <div class="invalid-feedback">
